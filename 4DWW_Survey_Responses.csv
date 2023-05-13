@@ -1,0 +1,67 @@
+Timestamp,Email Address,Age,Gender,Academic Standing,Which college are you in?,"Specify your primary major. (e.g. Bsc MCE, Msc CMP, ..etc)","During this semester, how strenuous is your workload?",Do you commute to university?,What is the distance of your commute in kilometers (km)?,Been upset because of something that happened unexpectedly?,Felt that you were unable to control the important things in your life?,"Felt nervous and ""stressed""? ",Felt confident about your ability to handle your personal problems?,Felt that things were going your way?,Found that you could not cope with all the things that you had to do?,Been able to control irritations in your life?,Felt that you were on top of things?,Been angered because of things that were outside of your control?,Felt difficulties were piling up so high that you could not overcome them?,"Since the shift to the 4 day working week, I have more time to engage in physical activity exercises",Number of hours worth of vigorous physical activities per day,Number of days worth of moderate physical activities per week,Number of hours worth of moderate physical activities per day,Number of days worth of walking over 10 mins at a time,Number of hours spent walking during a day,Number of hours spent sitting during a weekday,Your CGPA has increased,Your time management skills have increased,Your concentration has increased,Your level of engagement in class has increased,Your university attendance has increased,My academics prevented me from spending quality time with my family,There seems to be no time left at the end of each day to do things I’d like at home,My family misses out because of my university commitments,My university commitments have a negative impact on my family life,Working often makes me irritable or short tempered at home,My university performance suffers because of my family commitments,Family related concerns/responsibilities often distract me at university,"If I did not have a family, I’d be a better student",It is difficult to focus on university since I am exhausted by family responsibilities,The learning outcomes of my courses are relevant and applicable to my future career or academic goals,The courses I am taking help me acquire the necessary skills and knowledge for my future career or academic goals.,The instructors in my courses provide clear explanations and examples,The teaching methods used in my courses are effective and engaging,The instructors in my courses are approachable and available for help outside of class,The assessments used in my courses are aligned with the learning outcomes and effectively measure my knowledge and skills,The grading and evaluation process in my courses is fair and consistent,I feel appropriately challenged and intellectually stimulated in my courses,I feel supported by my instructors and peers in my courses,"Overall, how satisfied are you with the shift from the 5 day work week to the 4 day work week?"
+4/22/2023 13:34:52,g00079203@alumni.aus.edu,21,Female,Senior,College of Arts and Sciences,BA in International Studies ,5,Yes,11 km,2,1,3,4,2,2,5,4,2,1,1,1,4,2,7,3,,5,5,5,5,5,1,1,1,1,1,1,2,1,2,5,5,5,5,5,5,3,4,5,5
+4/22/2023 19:29:59,ayshdairf@gmail.com,22,Female,Senior,College of Arts and Sciences,Bsc,3,Yes,30 km,4,4,4,4,4,4,2,4,4,2,0,0,2,7,7,3,,4,2,2,5,2,4,3,4,3,4,4,2,2,2,2,2,4,4,4,4,2,2,4,5
+4/22/2023 21:06:05,g00082392@aus.edu,22,Female,Senior,College of Engineering,Industrial Engineering,4,Yes,35,3,2,3,4,4,3,4,5,4,2,2-3,1-3,1-3,0-3,2-4,0.75,,4,4,4,4,4,2,2,2,2,2,2,2,2,2,5,5,4,5,5,4,4,5,4,5
+4/23/2023 15:55:42,g00084406@aus.edu,20,Female,Senior,College of Engineering,Bsc MCE,5,No,"less than 1, i live in dorms",2,4,4,5,3,3,2,3,4,5,none,"other than walking, none",1,2,7,40 minutes ,,3,5,4,4,4,2,5,4,3,3,2,1,1,1,3,3,2,2,2,3,2,2,1,4
+4/23/2023 16:09:36,g00082473@aus.edu,22,Female,Senior,College of Engineering,Bsc MCE,5,Yes,22 km,4,5,4,4,3,4,3,2,3,3,1,2 hours ,2,3,1,1 hour ,,4,4,3,4,5,5,4,4,3,2,3,2,1,1,5,4,5,5,4,3,2,3,4,3
+4/25/2023 21:15:26,b00082265@aus.edu,22,Male,Senior,School of Business Administration,Finance ,3,Yes,6 km ,3,4,3,3,2,4,3,2,4,4,0,0,0,0,7,2 hours ,,2,1,2,2,4,4,3,3,4,3,2,2,1,1,3,3,3,2,4,3,2,3,3,3
+5/1/2023 16:13:35,,21,Male,Junior,College of Engineering,CMP,4,Yes,18,4,1,2,3,2,1,2,2,3,2,3,,,,,,,3,3,3,4,3,2,4,2,2,2,1,3,1,1,4,4,5,4,5,3,3,4,4,4
+5/1/2023 16:16:01,,22,Male,Senior,College of Engineering,INE,5,Yes,50,0,0,3,4,3,3,2,3,2,4,5,,,,,,,5,4,1,3,5,4,3,5,4,5,4,5,4,4,4,3,4,3,5,4,5,5,1,5
+5/1/2023 16:21:27,,20,Female,Sophomore,College of Engineering,INE,4,Yes,12,3,2,2,3,1,2,2,0,3,2,2,,,,,,,2,4,3,3,4,5,5,4,2,5,3,3,2,2,3,3,3,2,2,1,2,2,2,3
+5/1/2023 16:22:12,,22,Male,Senior,College of Engineering,Bsc,4,No,,2,3,3,2,2,3,3,1,3,3,4,,,,,,,3,2,4,3,4,4,4,4,4,4,4,4,4,4,4,4,3,4,3,4,3,4,4,3
+5/1/2023 16:24:46,,21,Female,Senior,College of Engineering,INE,3,Yes,54,3,3,2,3,2,2,3,2,1,2,4,,,,,,,1,3,4,3,2,4,4,4,4,2,1,1,3,1,4,3,4,4,4,3,3,3,3,5
+5/1/2023 16:28:42,,20,Female,Junior,College of Arts and Sciences,Bsc Mathematics ,5,Yes,18,2,4,4,2,2,4,3,1,4,4,4,,,,,,,4,2,2,2,1,3,5,4,5,3,1,3,2,1,4,4,3,3,4,3,2,3,3,4
+5/1/2023 16:34:26,,20,Male,Junior,College of Engineering,CHE,5,No,,4,4,4,4,1,3,2,2,4,3,1,,,,,,,3,1,3,2,2,4,5,3,3,4,2,1,1,1,2,2,2,2,4,2,3,3,3,3
+5/1/2023 16:40:59,,24,Female,Masters,College of Engineering,Msc CVE,5,Yes,20,2,2,3,2,1,1,2,2,3,1,2,,,,,,,3,2,3,3,3,2,2,2,2,4,2,4,1,2,4,4,4,4,4,3,4,4,4,3
+5/1/2023 16:41:12,,19,Male,Sophomore,College of Engineering,CMP,4,Yes,6,1,1,2,3,3,2,0,2,0,2,4,,,,,,,5,5,3,3,3,1,4,2,1,1,1,1,1,1,3,3,3,1,5,1,4,2,5,4
+5/1/2023 16:43:01,,22,Male,Masters,College of Engineering,Mtr (mechatronics),3,Yes,25km,2,3,3,3,2,1,3,3,2,2,5,,,,,,,3,2,4,5,5,1,1,1,2,3,4,4,3,4,2,2,5,4,5,4,4,4,4,4
+5/1/2023 16:43:08,,21,Female,Senior,College of Engineering,CVE,4,No,,2,1,3,2,4,2,2,3,2,2,4,,,,,,,3,3,1,2,1,2,2,2,3,1,2,2,1,1,2,2,2,2,3,2,2,3,2,5
+5/1/2023 16:55:29,,20,Female,Junior,School of Business Administration,MIS,3,Yes,5km,3,3,3,1,2,3,1,1,3,3,4,,,,,,,3,2,4,3,5,4,3,4,3,4,3,3,4,3,2,4,3,3,3,4,2,4,3,4
+5/1/2023 17:09:28,,23,Male,Masters,College of Engineering,Msc MCE,4,Yes,16,2,2,1,2,1,3,2,1,1,4,2,,,,,,,3,2,4,3,3,4,5,4,3,1,1,1,2,1,4,4,5,2,5,4,4,3,4,3
+5/1/2023 17:14:30,,19,Female,Sophomore,College of Arts and Sciences,IMC,3,Yes,11km,2,3,1,1,3,4,0,1,3,4,5,,,,,,,1,3,1,2,5,4,2,3,2,2,4,3,3,3,2,3,3,2,2,3,4,2,3,5
+5/1/2023 17:43:11,,19,Female,Sophomore,College of Arts and Sciences,Math,4,Yes,Not sure,4,4,4,3,2,3,0,1,4,4,1,,,,,,,3,3,3,3,3,5,5,4,3,5,4,5,2,1,3,4,3,2,5,5,4,5,4,3
+5/1/2023 17:43:27,,21,Male,Senior,College of Engineering,COE,4,Yes,44,1,2,3,4,3,2,3,3,2,2,2,,,,,,,3,4,3,3,4,1,4,2,1,2,1,2,1,2,4,3,4,4,5,4,4,3,4,4
+5/1/2023 18:34:56,,19,Male,Sophomore,College of Engineering,CHE,4,Yes,17,3,3,4,2,2,3,3,2,3,4,2,,,,,,,3,3,4,4,5,3,3,2,1,4,3,3,1,2,5,5,5,5,5,5,5,5,5,4
+5/1/2023 19:27:50,,20,Male,Senior,College of Engineering,BsC MCE,4,Yes,23,1,2,4,2,2,3,1,1,3,2,3,,,,,,,3,4,2,2,3,4,4,5,5,4,4,3,4,4,3,3,3,3,3,3,3,3,3,3
+5/1/2023 21:13:33,,19,Female,Freshman,College of Engineering,CSE,3,Yes,14km,1,1,1,2,2,1,2,2,1,2,1,,,,,,,3,2,2,4,4,3,4,3,2,5,2,4,4,3,3,2,4,4,3,3,4,4,4,4
+5/1/2023 23:12:23,,22,Male,Senior,College of Engineering,Mce,3,Yes,6 km,0,2,2,4,2,2,1,0,0,1,1,,,,,,,5,3,1,3,1,3,1,2,1,1,1,1,1,1,5,4,4,2,5,4,2,2,5,5
+5/1/2023 23:30:07,,23,Male,Senior,College of Engineering,INE,3,Yes,6.2km,3,3,2,3,2,2,3,2,3,2,4,,,,,,,4,4,4,4,4,4,3,4,4,3,5,5,4,4,5,5,5,5,5,5,4,5,5,5
+5/2/2023 0:15:35,,21,Male,Senior,College of Engineering,MCE,4,Yes,19,2,2,3,3,3,2,3,1,1,3,3,,,,,,,4,2,3,2,4,4,4,5,5,4,4,4,3,4,4,3,3,3,2,4,3,4,4,2
+5/2/2023 11:37:06,,20,Male,Sophomore,College of Engineering,BSc CMP,3,Yes,35,0,0,0,0,2,0,0,2,0,1,4,,,,,,,3,4,4,3,3,3,4,3,4,4,2,2,1,1,2,2,5,4,4,3,5,3,3,5
+5/3/2023 8:24:58,,21,Male,Senior,College of Engineering,COE,5,No,,4,3,4,3,1,4,4,2,4,4,1,,,,,,,1,4,1,1,1,5,5,5,5,4,4,4,1,2,2,3,3,2,2,3,2,2,1,1
+5/3/2023 19:29:32,,22,Female,Senior,College of Arts and Sciences,Bsc Physics ,5,Yes,30,2,2,3,2,2,4,1,1,2,4,2,,,,,,,3,3,3,3,4,5,4,5,5,4,3,3,1,2,3,3,3,3,3,3,2,3,3,3
+5/4/2023 11:46:31,,19,Male,Sophomore,College of Engineering,Bsc CMP,3,Yes,17,1,1,2,3,3,0,3,2,0,2,3,,,,,,,3,3,4,4,4,1,2,2,2,2,2,2,1,1,4,4,4,3,3,4,3,3,3,5
+5/4/2023 11:55:12,,19,Male,Sophomore,College of Engineering,Bsc CMP,2,Yes,20,0,0,0,3,2,2,4,3,1,2,3,,,,,,,4,3,3,2,5,2,4,2,2,3,4,2,1,2,4,4,4,1,4,4,4,4,5,4
+5/4/2023 12:01:38,,21,Female,Junior,School of Business Administration,Accounting,5,Yes,88.2,2,2,4,2,2,4,4,2,0,3,3,,,,,,,3,5,3,2,4,5,5,5,5,3,5,5,3,5,5,3,4,4,4,3,3,5,5,3
+5/4/2023 12:23:36,,20,Male,Junior,College of Engineering,Computer Science,4,No,,2,3,4,1,2,2,1,1,3,1,2,,,,,,,4,3,3,4,3,5,5,5,4,5,4,3,4,3,4,3,3,2,2,3,2,3,2,4
+5/4/2023 12:30:10,,20,Male,Sophomore,College of Engineering,Bsc CMP,4,Yes,15,1,1,3,3,3,4,4,2,0,0,5,,,,,,,4,3,4,3,4,4,3,4,2,2,3,3,1,1,3,4,4,3,4,3,4,5,4,5
+5/6/2023 18:25:54,,20,Female,Sophomore,School of Business Administration,BSBA,5,No,,3,3,4,2,1,4,2,2,3,3,1,,,,,,,2,4,3,5,3,5,5,2,4,4,4,5,3,3,5,5,3,3,4,4,1,4,3,2
+5/7/2023 16:46:17,,18,Female,Freshman,College of Engineering,Bsc CMP,5,Yes,21 km,4,4,4,1,0,4,0,0,4,4,2,,,,,,,1,1,1,1,4,3,4,3,3,5,4,3,1,1,3,3,3,3,3,3,3,3,3,4
+5/7/2023 16:47:22,,21,Female,Junior,College of Engineering,INE,5,No,,1,1,4,2,1,3,1,1,3,2,4,,,,,,,2,2,2,2,3,4,4,4,4,3,1,1,1,1,1,2,4,3,3,4,5,5,1,2
+5/7/2023 16:47:31,,19,Female,Sophomore,College of Arts and Sciences,BSB,4,Yes,22 km,2,4,4,2,2,4,2,1,3,3,1,,,,,,,3,4,5,4,5,4,5,5,4,4,2,3,1,2,3,3,4,4,4,4,4,3,4,4
+5/7/2023 16:57:20,,19,Female,Sophomore,College of Engineering,Bsc CMP,4,Yes,6,2,3,4,2,0,2,3,1,2,2,3,,,,,,,3,4,1,1,2,2,5,2,3,3,1,1,3,1,3,2,3,3,5,3,4,4,2,3
+5/7/2023 17:00:13,,20,Male,Sophomore,College of Engineering,CMP,4,Yes,18.2,2,4,2,1,2,2,3,2,3,3,4,,,,,,,2,3,3,4,5,3,5,4,3,4,3,3,1,1,3,3,4,3,4,4,4,4,3,3
+5/7/2023 17:48:51,,18,Male,Freshman,College of Engineering,Bsc CMP,3,No,,2,3,2,3,3,1,2,3,3,2,5,,,,,,,4,4,3,4,5,3,2,1,1,2,2,2,1,1,5,4,5,4,4,4,3,3,5,4
+5/8/2023 13:28:56,,22,Male,Senior,College of Engineering,MCE,4,Yes,40,3,2,3,2,3,2,4,3,1,1,4,,,,,,,2,3,3,2,3,5,3,2,4,3,3,4,3,4,3,4,2,3,4,3,2,3,4,5
+5/8/2023 13:32:35,,20,Male,Sophomore,College of Engineering,CMP,5,No,0,4,2,4,2,2,2,1,1,3,3,3,,,,,,,4,3,2,2,3,4,4,5,3,4,3,2,1,2,4,4,2,3,5,3,3,4,4,5
+5/8/2023 13:35:17,,22,Male,Senior,College of Engineering,Bsc,4,Yes,13,2,1,2,2,3,2,3,2,1,1,4,,,,,,,3,3,4,4,4,3,3,3,4,4,1,2,1,1,3,3,4,3,3,4,4,3,3,4
+5/8/2023 13:35:57,,19,Female,Sophomore,College of Engineering,CMP,4,Yes,9.8,1,2,1,3,2,1,3,1,3,2,4,,,,,,,2,3,3,3,4,4,3,4,2,4,1,4,1,1,3,4,5,4,5,5,4,5,5,4
+5/8/2023 13:43:26,,20,Male,Sophomore,College of Engineering,Industrial Engineering ,4,Yes,35,1,1,3,2,2,1,1,2,1,2,4,,,,,,,4,4,4,4,4,2,4,4,2,3,2,2,1,1,3,3,3,3,4,4,4,4,4,4
+5/8/2023 13:46:58,,20,Male,Junior,College of Engineering,BSc CMP,4,Yes,35,1,2,3,2,2,2,3,2,2,2,2,,,,,,,3,4,4,4,4,4,5,4,5,4,2,2,1,1,3,4,4,4,4,4,4,4,4,4
+5/8/2023 13:47:22,,21,Female,Senior,College of Arts and Sciences,Bsc Mathematics,2,Yes,<10km,2,3,3,2,1,3,2,2,4,3,5,,,,,,,5,5,5,5,5,2,1,1,2,4,3,5,1,5,3,3,4,3,3,4,5,2,4,5
+5/8/2023 13:47:48,,20,Male,Junior,College of Engineering,Bsc CMP,5,No,,2,1,3,1,3,3,2,3,3,3,5,,,,,,,4,4,4,3,3,4,4,4,5,2,3,4,1,1,5,5,4,4,5,5,4,5,5,4
+5/8/2023 13:51:40,,18,Male,Sophomore,College of Engineering,Bsc CMP,4,No,,2,2,2,1,3,2,2,2,1,1,3,,,,,,,3,4,3,3,3,4,4,4,3,4,1,2,1,1,4,4,4,3,5,3,4,4,5,5
+5/8/2023 14:55:29,,20,Female,Sophomore,College of Engineering,Bsc COE,4,No,,3,2,4,2,2,3,2,2,3,4,3,,,,,,,3,3,3,3,2,3,4,4,3,4,1,4,1,1,4,3,4,4,4,4,2,3,4,3
+5/8/2023 15:42:46,,20,Female,Junior,College of Arts and Sciences,BA,5,Yes,12,3,3,3,2,2,4,2,1,3,3,5,,,,,,,3,2,3,4,4,4,5,4,3,4,2,4,3,2,4,4,5,4,4,3,3,5,4,4
+5/8/2023 16:13:22,,19,Female,Sophomore,College of Arts and Sciences,BA International studies ,3,No,,4,4,4,1,2,2,0,2,4,4,2,,,,,,,3,3,3,3,4,2,1,1,1,3,1,1,1,1,3,4,4,4,4,3,4,4,4,3
+5/8/2023 20:04:32,,21,Female,Sophomore,College of Engineering,Bsc ELE,4,Yes,20,2,3,4,3,2,4,1,1,3,4,3,,,,,,,5,5,5,5,5,4,3,3,4,3,4,4,4,4,4,4,4,4,4,4,4,4,4,5
+5/8/2023 20:10:56,,20,Male,Junior,College of Engineering,Bsc CMP,4,Yes,20,2,2,1,3,2,1,2,2,3,4,4,,,,,,,3,3,4,1,1,4,2,4,3,1,2,2,1,2,5,4,4,4,4,3,3,4,4,4
+5/8/2023 20:48:13,,18,Female,Sophomore,College of Arts and Sciences,Bsc Biology,3,Yes,I genuinely don't know,2,3,2,3,3,3,3,2,1,3,3,,,,,,,2,2,2,3,5,2,3,4,2,3,4,4,3,4,3,4,4,3,4,4,4,4,3,5
+5/8/2023 21:39:06,,20,Male,Junior,School of Business Administration,BSBA Accounting,4,Yes,30,1,1,2,2,2,2,3,2,2,2,3,,,,,,,3,3,3,4,5,2,2,4,2,1,2,2,1,2,4,3,4,4,4,4,4,4,4,5
+5/8/2023 21:51:34,,19,Male,Sophomore,College of Engineering,Computer Engineering,5,No,,3,3,2,2,2,3,2,3,2,3,3,,,,,,,3,2,1,3,3,5,5,4,4,2,4,4,3,4,5,5,5,4,5,5,5,3,4,2
+5/9/2023 11:18:29,,23,Male,Senior,School of Business Administration,MIS,5,Yes,50,2,1,2,4,2,3,0,2,3,2,3,,,,,,,3,4,3,3,3,5,5,5,5,3,3,3,1,1,4,4,3,3,4,3,4,4,4,4
+5/9/2023 11:56:40,,19,Male,Sophomore,College of Engineering,Bsc ELE,5,Yes,Around 20 km,3,3,3,2,1,3,1,1,4,4,2,,,,,,,2,4,3,3,2,4,5,3,5,5,4,3,1,4,2,3,3,2,2,4,2,4,2,2
+5/9/2023 12:05:20,,21,Male,Sophomore,College of Engineering,CMP,4,Yes,19,2,3,3,2,3,1,2,2,3,2,3,,,,,,,4,2,4,4,3,2,4,3,2,3,2,4,1,2,4,4,4,4,5,4,3,4,4,4
+5/9/2023 18:18:26,,19,Female,Sophomore,College of Arts and Sciences,BA Psychology ,3,Yes,35,1,0,2,3,3,1,3,1,2,1,5,,,,,,,4,3,5,4,5,2,2,1,1,1,1,1,1,1,4,4,5,5,5,5,5,5,5,5
+5/9/2023 18:31:51,,19,Female,Sophomore,School of Business Administration,Accounting,3,Yes,28,0,0,2,3,3,1,3,2,0,0,4,,,,,,,4,4,1,3,3,2,4,3,1,1,1,1,1,1,5,5,5,5,5,5,4,5,5,5
+5/9/2023 19:44:59,,23,Male,Senior,College of Engineering,MCE,4,Yes,30,2,2,2,3,2,1,3,2,1,2,4,,,,,,,4,3,3,4,4,3,2,3,3,3,1,1,1,1,3,3,4,3,4,3,4,3,4,4
