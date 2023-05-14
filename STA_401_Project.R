@@ -164,7 +164,7 @@ varImpPlot(rf_pca)
 
 #Fitting Random Forest with 5 Factors FA loadings
 library(randomForest)
-rf_pca <- randomForest(data$Satisfaction~., data=factor_scores$scores[,1:5],mtry=3,importance=TRUE)
+rf_pca <- randomForest(data$Satisfaction~., data=factor_scores$scores[,1:5],mtry=2,importance=TRUE)
 importance(rf_pca)
 varImpPlot(rf_pca)
 
