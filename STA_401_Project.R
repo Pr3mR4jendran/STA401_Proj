@@ -57,6 +57,30 @@ ggplot(data, aes(x = data$Satisfaction, fill=data$Satisfaction)) +
   labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+ggplot(data, aes(x = data$Gender, fill=data$Gender)) +
+  geom_bar() +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Bar Plot of Genders", x = "Genders", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(data, aes(x = data$Academic_Standing, fill=data$Academic_Standing)) +
+  geom_bar() +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Bar Plot of Academic Standing", x = "Academic Standing", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(data, aes(x = data$College, fill=data$College)) +
+  geom_bar() +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Bar Plot of Colleges", x = "Colleges", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(data, aes(x = data$Commuting, fill=data$Commuting)) +
+  geom_bar() +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Bar Plot of Commuting", x = "Commuting", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 #we need to pre-process and extract only the numeric columns from our dataset for PCA and Factor Analysis
 cont_data <- as.data.frame(lapply(data, function(x) as.integer(as.character(x))))
 #removing non numeric and response variable
@@ -106,11 +130,17 @@ plot(1:length(eigenvalues), eigenvalues, type = "b",
 factor_scores <- factor.scores(cont_data, factor_analysis)
 print(factor_scores$scores)
 
-#Fitting a Logistic Regression with Factors and Satisfaction
+#Fitting a Logistic Regression with 10 Factors and Satisfaction
 fa_model <- glm(data$Satisfaction ~ factor_scores$scores[,1] + factor_scores$scores[,2] +
                factor_scores$scores[,3] + factor_scores$scores[,4] + factor_scores$scores[,5] + 
                factor_scores$scores[,6] + factor_scores$scores[,7] +factor_scores$scores[,8] + 
                factor_scores$scores[,9] + factor_scores$scores[,10], family = binomial)
+summary(fa_model)
+
+#Fitting a Logistic Regression with 5 Factors and Satisfaction
+fa_model <- glm(data$Satisfaction ~ factor_scores$scores[,1] + factor_scores$scores[,2] +
+                  factor_scores$scores[,3] + factor_scores$scores[,4] + factor_scores$scores[,5], 
+                family = binomial)
 summary(fa_model)
 
 #Fitting a Logistic Regression with PCA loadings and Satisfaction
@@ -119,6 +149,24 @@ pca_model <- glm(data$Satisfaction ~ pca_scores[,1] + pca_scores[,2] + pca_score
                pca_scores[,5] + pca_scores[,6] + pca_scores[,7] + pca_scores[,8] + pca_scores[,9] + 
                pca_scores[,10], family=binomial)
 summary(pca_model)
+
+#Fitting Random Forest with PCA loadings
+library(randomForest)
+rf_pca <- randomForest(data$Satisfaction~., data=pca_scores,mtry=3,importance=TRUE)
+importance(rf_pca)
+varImpPlot(rf_pca)
+
+#Fitting Random Forest with 10 Factors FA loadings
+library(randomForest)
+rf_pca <- randomForest(data$Satisfaction~., data=factor_scores$scores,mtry=3,importance=TRUE)
+importance(rf_pca)
+varImpPlot(rf_pca)
+
+#Fitting Random Forest with 5 Factors FA loadings
+library(randomForest)
+rf_pca <- randomForest(data$Satisfaction~., data=factor_scores$scores[,1:5],mtry=3,importance=TRUE)
+importance(rf_pca)
+varImpPlot(rf_pca)
 
 #Exporting cleaned data for future use
 write.csv(data, file = "4DWW_Survey_Responses_Cleaned.csv", row.names = FALSE)
