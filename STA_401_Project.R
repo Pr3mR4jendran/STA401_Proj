@@ -1,3 +1,19 @@
+install.packages("packagename")
+install.packages("matrixStats")
+library(matrixStats)
+library(ggplot2)
+library(corrplot)
+library(devtools)
+library(ggbiplot)
+library(psych)
+library(factoextra)
+require(foreign)
+require(ggplot2)
+require(MASS)
+require(Hmisc)
+require(reshape2)
+library(dplyr)
+
 ###Load Dataset
 
 data <- read.csv("4DWW_Survey_Responses.csv")
@@ -18,15 +34,25 @@ new_cols = c("Age", "Gender", "Academic_Standing", "College", "Workload_Intensit
              "WLB5", "WLB6", "WLB7", "WLB8", "WLB9", "QL1", "QL2", "QL3", "QL4", "QL5", "QL6", "QL7",
              "QL8", "QL9", "Satisfaction")
 names(data) <- new_cols
-
+data$PHY <- as.integer(data$PHY)
 str(data)
+
+#creating a new dataset using only the variables
+data_var <- data[,-c(1,2,3,4,5,6)]
+data_var <- data_var[,-c(35)]
+str(data_var)
+View(data_var)
+
+#Tests on variables 
+bart_spher(data_var)
+KMO(data_var)
 
 #Converting analyzing factors into ordinal categorical variables
 convert_cols <- c(7:ncol(data))
 for (i in convert_cols){
   data[[i]] <- factor(data[[i]], ordered = TRUE)
 }
-
+str(data)
 #converting other variables into appropriate types
 data$Gender = factor(data$Gender)
 data$Academic_Standing = factor(data$Academic_Standing)
@@ -35,7 +61,6 @@ data$Workload_Intensity = factor(data$Workload_Intensity, ordered = TRUE)
 data$Commuting = factor(data$Commuting)
 
 ###Exploring the dataset
-
 summary(data)
 
 #Performing Chi-Square Test on all the predictors
@@ -48,51 +73,52 @@ for (col in names(data)){
   }
 }
 
-#Visualizing satisfaction using a barplot
-library(ggplot2)
+#Visualizing satisfaction using a bar plot
 
-ggplot(data, aes(x = data$Satisfaction, fill=data$Satisfaction)) +
+ggplot(data, aes(x = data$AP1, fill=data$AP1)) +
+  geom_bar() +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))l_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(data, aes(x = data$AP2, fill=data$AP2)) +
   geom_bar() +
   scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
   labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-ggplot(data, aes(x = data$Gender, fill=data$Gender)) +
+ggplot(data, aes(x = data$AP3, fill=data$AP3)) +
   geom_bar() +
   scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
-  labs(title = "Bar Plot of Genders", x = "Genders", y = "Count") +
+  labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-ggplot(data, aes(x = data$Academic_Standing, fill=data$Academic_Standing)) +
+ggplot(data, aes(x = data$AP4, fill=data$AP4)) +
   geom_bar() +
   scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
-  labs(title = "Bar Plot of Academic Standing", x = "Academic Standing", y = "Count") +
+  labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-ggplot(data, aes(x = data$College, fill=data$College)) +
+ggplot(data, aes(x = data$AP5, fill=data$AP5)) +
   geom_bar() +
   scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
-  labs(title = "Bar Plot of Colleges", x = "Colleges", y = "Count") +
+  labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-ggplot(data, aes(x = data$Commuting, fill=data$Commuting)) +
+ggplot(data, aes(x = data$Satisfaction, fill=data$Gender)) +
   geom_bar() +
   scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
-  labs(title = "Bar Plot of Commuting", x = "Commuting", y = "Count") +
+  labs(title = "Bar Plot of Satisfaction", x = "Satisfaction", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-#we need to pre-process and extract only the numeric columns from our dataset for PCA and Factor Analysis
-cont_data <- as.data.frame(lapply(data, function(x) as.integer(as.character(x))))
-#removing non numeric and response variable
-cont_data <- cont_data[, -c(1,2,3,4,6,41)]
-View(cont_data)
-
-correlations <- cor(cont_data)
-library(corrplot)
+#using data_var for PCA & FA
+correlations <- cor(data_var)
 corrplot(correlations, method="color", type="upper", order="hclust")
 
 ###PCA
-pca_result <- prcomp(cont_data)
+pca_result <- prcomp(data_var)
 summary(pca_result)
 names(pca_result)
 pca_result$sdev
@@ -102,71 +128,143 @@ pca_result$scale
 pca_result$x
 
 biplot(pca_result)
-
-library(devtools)
-library(ggbiplot)
 ggscreeplot(pca_result)
-
-
-library(factoextra)
 fviz_pca_var(pca_result, col.var = "contrib", repel = TRUE)
 
+#Fitting a Ordinal Logistic Regression with PCA loadings and Satisfaction
+pca_scores <- pca_result$x[,1:5]
+pca_model <- polr(data$Satisfaction ~ pca_scores[,1] + pca_scores[,2] + pca_scores[,3] + pca_scores[,4] + 
+                    pca_scores[,5], Hess=TRUE)
+summary(pca_model)
+
+
 ###Factor Analysis
-library(psych)
-factor_analysis <- fa(cont_data, nfactors = 10, rotate = "varimax")
-summary(factor_analysis)
-print(factor_analysis$loadings)
 
-names(factor_analysis)
-fa.diagram(factor_analysis)
-
-plot(density(factor_analysis$scores, na.rm = TRUE), 
-     main = "Factor Scores")
-
-eigenvalues <- factor_analysis$values
+#EFA, exploratory 
+fa_total=fa(data_var, nfactors = 34) #16 significant factors 
+names(fa_total)
+eigenvalues <- fa_total$values
 plot(1:length(eigenvalues), eigenvalues, type = "b", 
      xlab = "Factor Number", ylab = "Eigenvalues", main = "Scree Plot")
 
-factor_scores <- factor.scores(cont_data, factor_analysis)
+M1=fa(data_var, nfactors = 5)
+fa.diagram(M1,main="data_var",text=pretty)
+
+plot(density(M1$scores, na.rm = TRUE), 
+     main = "Factor Scores")
+
+eigenvalues <- M1$values
+plot(1:length(eigenvalues), eigenvalues, type = "b", 
+     xlab = "Factor Number", ylab = "Eigenvalues", main = "Scree Plot")
+
+factor_scores <- factor.scores(data_var, M1)
+factor_scores
 print(factor_scores$scores)
 
-#Fitting a Logistic Regression with 10 Factors and Satisfaction
-fa_model <- glm(data$Satisfaction ~ factor_scores$scores[,1] + factor_scores$scores[,2] +
-               factor_scores$scores[,3] + factor_scores$scores[,4] + factor_scores$scores[,5] + 
-               factor_scores$scores[,6] + factor_scores$scores[,7] +factor_scores$scores[,8] + 
-               factor_scores$scores[,9] + factor_scores$scores[,10], family = binomial)
-summary(fa_model)
 
-#Fitting a Logistic Regression with 5 Factors and Satisfaction
-fa_model <- glm(data$Satisfaction ~ factor_scores$scores[,1] + factor_scores$scores[,2] +
-                  factor_scores$scores[,3] + factor_scores$scores[,4] + factor_scores$scores[,5], 
-                family = binomial)
-summary(fa_model)
+#CFA, confirmatory
+model <- ' 
+PD =~ PD1+PD2+PD3+PD4+PD5+PD6+PD7+PD8+PD9+PD10+PHY
+AP =~ AP1+AP2+AP3+AP4+AP5
+WLB1N=~WLB1+WLB2+WLB3+WLB4+WLB5
+WLB2N=~WLB6+WLB7+WLB8+WLB9
+QL=~QL1+QL2+QL3+QL4+QL5+QL6+QL7+QL8+QL9
+'
+fit <-cfa(model, data=data_var)
+summary(fit,fit.measures=TRUE,standardized=TRUE)
+View(data_var)
 
-#Fitting a Logistic Regression with PCA loadings and Satisfaction
-pca_scores <- pca_result$x[,1:10]
-pca_model <- glm(data$Satisfaction ~ pca_scores[,1] + pca_scores[,2] + pca_scores[,3] + pca_scores[,4] + 
-               pca_scores[,5] + pca_scores[,6] + pca_scores[,7] + pca_scores[,8] + pca_scores[,9] + 
-               pca_scores[,10], family=binomial)
-summary(pca_model)
+#Transforming variable scales PD4, PD5, PD7, PD8
+data_var$PD4n=4-data_var$PD4
+data_var$PD5n=4-data_var$PD5
+data_var$PD7n=4-data_var$PD7
+data_var$PD8n=4-data_var$PD8
+data_var$PHYn=4-data_var$PHY
+View(data_var)
 
-#Fitting Random Forest with PCA loadings
-library(randomForest)
-rf_pca <- randomForest(data$Satisfaction~., data=pca_scores,mtry=3,importance=TRUE)
-importance(rf_pca)
-varImpPlot(rf_pca)
+#run new CFA model 
+model2 <- ' 
+PD =~ PD1+PD2+PD3+PD4n+PD5n+PD6+PD7n+PD8n+PD9+PD10+PHYn
+AP =~ AP1+AP2+AP3+AP4+AP5
+WLB1N=~WLB1+WLB2+WLB3+WLB4+WLB5
+WLB2N=~WLB6+WLB7+WLB8+WLB9
+QL=~QL1+QL2+QL3+QL4+QL5+QL6+QL7+QL8+QL9
+'
+fit2 <-cfa(model2, data=data_var)
+summary(fit2,fit.measures=TRUE,standardized=TRUE)
 
-#Fitting Random Forest with 10 Factors FA loadings
-library(randomForest)
-rf_pca <- randomForest(data$Satisfaction~., data=factor_scores$scores,mtry=3,importance=TRUE)
-importance(rf_pca)
-varImpPlot(rf_pca)
+model3 <- ' 
+PD =~ PD1+PD2+PD3+PD5n+PD6+PD8n+PD9+PD10+PHYn
+AP =~ AP1+AP2+AP3+AP4+AP5
+WLB1N=~WLB1+WLB2+WLB3+WLB4+WLB5
+WLB2N=~WLB6+WLB7+WLB8+WLB9
+QL=~QL1+QL2+QL3+QL4+QL5+QL6+QL7+QL8+QL9
+'
+fit3 <-cfa(model3, data=data_var)
+summary(fit3,fit.measures=TRUE,standardized=TRUE)
 
-#Fitting Random Forest with 5 Factors FA loadings
-library(randomForest)
-rf_pca <- randomForest(data$Satisfaction~., data=factor_scores$scores[,1:5],mtry=2,importance=TRUE)
-importance(rf_pca)
-varImpPlot(rf_pca)
+#removing insignificant variables 
+model4 <- ' 
+PD =~ PD1+PD2+PD3+PD6+PD9+PD10
+AP =~ AP3+AP4+AP5
+WLB1N=~WLB1+WLB2+WLB3+WLB4
+WLB2N=~WLB6+WLB7+WLB8+WLB9
+QL=~QL1+QL2+QL3+QL4+QL5+QL6+QL9
+'
+fit4 <-cfa(model4, data=data_var)
+summary(fit4,fit.measures=TRUE,standardized=TRUE)
+
+
+#Creating Latent Factors through median of other variables
+data_var <- data_var %>%
+  mutate(PD = apply(.[c("PD1", "PD2","PD9","PD10")],1,median, na.rm = TRUE))
+
+data_var <- data_var %>%
+  mutate(AP = apply(.[c("AP3", "AP4", "AP5")],1,median, na.rm = TRUE))
+
+data_var <- data_var %>%
+  mutate(WLB1N = apply(.[c("WLB1", "WLB2", "WLB3","WLB4")],1,median, na.rm = TRUE))
+
+data_var <- data_var %>%
+  mutate(WLB2N = apply(.[c("WLB6", "WLB7", "WLB8","WLB9")],1,median, na.rm = TRUE))
+
+data_var <- data_var %>%
+  mutate(QL = apply(.[c("QL1", "QL2", "QL3","QL4","QL5","QL6","QL9")],1,median, na.rm = TRUE))
+
+data_var$PD=as.numeric(data_var$PD)
+data_var$AP=as.numeric(data_var$AP)
+data_var$WLB1N=as.numeric(data_var$WLB1N)
+data_var$WLB2N=as.numeric(data_var$WLB2N)
+data_var$QL=as.numeric(data_var$QL)
+str(data_var)
+
+#Fitting a Ordinal Logistic Regression with Factors and Satisfaction
+cfa_model <- polr(data$Satisfaction ~ data_var$PD +data_var$AP + data_var$WLB1N + data_var$WLB2N + data_var$QL, Hess=TRUE)
+summary(cfa_model)
+
+#histogram of important factors 
+par(mfrow = c(1, 3))
+hist(data_var$PD)
+hist(data_var$WLB1N)
+hist(data_var$QL)
+
+ggplot(data, aes(x = data_var$PD, fill=data$Satisfaction)) +
+  geom_histogram(binwidth = 0.5, color = "black", alpha = 0.7) +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Histogram of Psychological Distress", x = "Psychological Distress", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(data, aes(x = data_var$WLB1N, fill=data$Satisfaction)) +
+  geom_histogram(binwidth = 0.5, color = "black", alpha = 0.7) +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Histogram of Work-Life Balance", x = "Work-Life Balance", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(data, aes(x = data_var$QL, fill=data$Satisfaction)) +
+  geom_histogram(binwidth = 0.5, color = "black", alpha = 0.7) +
+  scale_fill_manual("Legend", values = c("blue", "red", "green", "aquamarine", "blueviolet")) +
+  labs(title = "Histogram of Quality of Learning", x = "Quality of Learning", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 #Exporting cleaned data for future use
 write.csv(data, file = "4DWW_Survey_Responses_Cleaned.csv", row.names = FALSE)
